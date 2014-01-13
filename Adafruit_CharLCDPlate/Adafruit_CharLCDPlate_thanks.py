@@ -16,7 +16,7 @@ lcd.message(message)
 # Calc how many spaces to move
 move = len(message) - 16
 
-# make infinite loop
+# Loop until any button is pressed
 loop = 1
 while True:
   # Wait one second
@@ -31,5 +31,7 @@ while True:
   for x in range(0, move):
     lcd.scrollDisplayRight()
     sleep(0.08)
+  if lcd.buttonPressed():
+    loop = 0
   loop += 1
 
