@@ -16,16 +16,20 @@ lcd.message(message)
 # Calc how many spaces to move
 move = len(message) - 16
 
-sleep(1)
-
-# Scroll display
-for x in range(0,move):
-  lcd.scrollDisplayLeft()
-  sleep(0.15)
-# Wait half a second
-sleep(0.5)
-# Scroll display back
-for x in range(0, move):
-  lcd.scrollDisplayRight()
-  sleep(0.08)
+# make infinite loop
+loop = 1
+while True:
+  # Wait one second
+  sleep(1)
+  # Scroll display
+  for x in range(0,move):
+    lcd.scrollDisplayLeft()
+    sleep(0.15)
+  # Wait half a second
+  sleep(0.5)
+  # Scroll display back
+  for x in range(0, move):
+    lcd.scrollDisplayRight()
+    sleep(0.08)
+  loop += 1
 
